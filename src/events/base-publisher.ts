@@ -14,6 +14,7 @@ export abstract class Publisher<T extends Event> {
     this.client = client;
   }
 
+  // ovo stavljamo u Promise da bi mogli da ga koristimo u async/await
   publish(data: T['data']): Promise<void> {
     return new Promise((resolve, reject) => {
       this.client.publish(this.subject, JSON.stringify(data), (err) => {
