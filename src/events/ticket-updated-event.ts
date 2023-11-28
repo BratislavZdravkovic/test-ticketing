@@ -8,5 +8,6 @@ export interface TicketUpdatedEvent {
     price: number;
     userId: string;
     version: number;
+    orderId?: string; // moze da se desi da update-ujemo ticket tako da ga na ne rezervisemo (npr. update-ujemo cenu)
   };
 }
